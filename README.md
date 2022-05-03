@@ -1,6 +1,4 @@
-# Angular 2/4/6/8 Multiselect Dropdown
-[![npm version](https://img.shields.io/npm/v/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
-[![downloads](https://img.shields.io/npm/dt/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
+# Angular 7/8 Multiselect Dropdown
 [![license](https://img.shields.io/github/license/cuppalabs/angular2-multiselect-dropdown.svg)](https://www.npmjs.com/package/angular2-multiselect-dropdown)
 
 Angular 2 multiselect dropdown component for web applications. Easy to integrate and use.
@@ -93,10 +91,6 @@ export class AppComponent implements OnInit {
                                   classes:"myclass custom-class"
                                 };            
     }
-    onItemSelect(item:any){
-        console.log(item);
-        console.log(this.selectedItems);
-    }
     OnItemDeSelect(item:any){
         console.log(item);
         console.log(this.selectedItems);
@@ -112,9 +106,8 @@ export class AppComponent implements OnInit {
 
 Add the following component tag in you template 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" 
-    [settings]="dropdownSettings" 
-    (onSelect)="onItemSelect($event)" 
+<angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" 
+    [settings]="dropdownSettings"
     (onDeSelect)="OnItemDeSelect($event)"
     (onSelectAll)="onSelectAll($event)"
     (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
@@ -134,7 +127,7 @@ You can create your own theme from now on. You can have a look at example scss t
 ### Template - For custom html of menu item
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
+<angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" [settings]="dropdownSettings">
   <c-item>
           <ng-template let-item="item">
             <label style="color: #333;min-width: 150px;">{{item.itemName}}</label>
@@ -149,7 +142,7 @@ You can create your own theme from now on. You can have a look at example scss t
 ### Template - For custom html of Selected item - badge
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [settings]="dropdownSettings">
+<angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" [settings]="dropdownSettings">
   <c-badge>
            <ng-template let-item="item">
             <label style="margin: 0px;">{{item.itemName}}</label>
@@ -167,9 +160,8 @@ You can create your own theme from now on. You can have a look at example scss t
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" style="border: 1px solid #ccc; padding: 10px;">
         <div class="form-group">
             <label for="name">Skills</label>
-            <angular2-multiselect [data]="itemList" [(ngModel)]="formModel.skills" 
-                                  [settings]="settings" 
-                                  (onSelect)="onItemSelect($event)"
+            <angular2-multiselect [data]="itemList" [(selection)]="formModel.skills" 
+                                  [settings]="settings"
                                   (onDeSelect)="OnItemDeSelect($event)" 
                                   (onSelectAll)="onSelectAll($event)" 
                                   (onDeSelectAll)="onDeSelectAll($event)" name="skills">
@@ -196,9 +188,8 @@ formModel = {
 <form [formGroup]="userForm" novalidate style="border: 1px solid #ccc; padding: 10px;">
         <div class="form-group">
             <label for="name">Skills</label>
-           <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" 
-                                  [settings]="settings" 
-                                  (onSelect)="onItemSelect($event)"
+           <angular2-multiselect [data]="itemList" [(selection)]="selectedItems" 
+                                  [settings]="settings"
                                   (onDeSelect)="OnItemDeSelect($event)" 
                                   (onSelectAll)="onSelectAll($event)" 
                                   (onDeSelectAll)="onDeSelectAll($event)" formControlName="skills">
@@ -253,8 +244,6 @@ The following list of settings are supported by the component. Configure the set
 | escapeToClose | boolean | Press excape key to close the dropdown | true |
 
 ### Events
-- `onSelect` - Return the selected item on selection.
-    Example : (onSelect)="onItemSelect($event)"
 - `onDeSelect` - Return the un-selected item on un-selecting.
     Example : (onDeSelect)="OnItemDeSelect($event)"
 - `onSelectAll` - Return the list of all selected items.
