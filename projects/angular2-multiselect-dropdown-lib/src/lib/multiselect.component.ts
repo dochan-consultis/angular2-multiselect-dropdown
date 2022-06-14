@@ -51,7 +51,7 @@ const noop = () => {
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'angular2-multiselect',
+  selector: 'grafit-angular2-multiselect',
   templateUrl: './multiselect.component.html',
   // tslint:disable-next-line:no-host-metadata-property
   host: {'[class]': 'defaultSettings.classes'},

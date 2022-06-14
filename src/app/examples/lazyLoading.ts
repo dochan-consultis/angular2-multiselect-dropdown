@@ -14,7 +14,7 @@ export class LazyLoadingExample implements OnInit {
     ngOnInit() {
 
         this.itemList = [];
-        for(var t=1;t<=1000;t++){
+        for(var t=1;t<=19000;t++){
          var tempObj = {"id":0,"itemName":"","category":""};
          tempObj.id = t;
          tempObj.itemName= this.namesList[Math.floor(Math.random()*this.namesList.length)];

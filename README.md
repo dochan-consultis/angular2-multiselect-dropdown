@@ -106,11 +106,11 @@ export class AppComponent implements OnInit {
 
 Add the following component tag in you template 
 ```html
-<angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" 
+<grafit-angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" 
     [settings]="dropdownSettings"
     (onDeSelect)="OnItemDeSelect($event)"
     (onSelectAll)="onSelectAll($event)"
-    (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+    (onDeSelectAll)="onDeSelectAll($event)"></grafit-angular2-multiselect>
 
 ```
 
@@ -127,7 +127,7 @@ You can create your own theme from now on. You can have a look at example scss t
 ### Template - For custom html of menu item
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" [settings]="dropdownSettings">
+<grafit-angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" [settings]="dropdownSettings">
   <c-item>
           <ng-template let-item="item">
             <label style="color: #333;min-width: 150px;">{{item.itemName}}</label>
@@ -135,21 +135,21 @@ You can create your own theme from now on. You can have a look at example scss t
             <label>Capital - {{item.capital}}</label>
           </ng-template>
   </c-item>    
-</angular2-multiselect>
+</grafit-angular2-multiselect>
 
 ```
 
 ### Template - For custom html of Selected item - badge
 
 ```html
-<angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" [settings]="dropdownSettings">
+<grafit-angular2-multiselect [data]="dropdownList" [(selection)]="selectedItems" [settings]="dropdownSettings">
   <c-badge>
            <ng-template let-item="item">
             <label style="margin: 0px;">{{item.itemName}}</label>
             <img [src]="item.image" style="width: 16px; margin-right: 5px;" />
            </ng-template>
   </c-badge>  
-</angular2-multiselect>
+</grafit-angular2-multiselect>
 
 ```
 
@@ -160,12 +160,12 @@ You can create your own theme from now on. You can have a look at example scss t
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" style="border: 1px solid #ccc; padding: 10px;">
         <div class="form-group">
             <label for="name">Skills</label>
-            <angular2-multiselect [data]="itemList" [(selection)]="formModel.skills" 
+            <grafit-angular2-multiselect [data]="itemList" [(selection)]="formModel.skills" 
                                   [settings]="settings"
                                   (onDeSelect)="OnItemDeSelect($event)" 
                                   (onSelectAll)="onSelectAll($event)" 
                                   (onDeSelectAll)="onDeSelectAll($event)" name="skills">
-            </angular2-multiselect>
+            </grafit-angular2-multiselect>
         </div>
 </form>
 
@@ -188,12 +188,12 @@ formModel = {
 <form [formGroup]="userForm" novalidate style="border: 1px solid #ccc; padding: 10px;">
         <div class="form-group">
             <label for="name">Skills</label>
-           <angular2-multiselect [data]="itemList" [(selection)]="selectedItems" 
+           <grafit-angular2-multiselect [data]="itemList" [(selection)]="selectedItems" 
                                   [settings]="settings"
                                   (onDeSelect)="OnItemDeSelect($event)" 
                                   (onSelectAll)="onSelectAll($event)" 
                                   (onDeSelectAll)="onDeSelectAll($event)" formControlName="skills">
-            </angular2-multiselect>
+            </grafit-angular2-multiselect>
         </div>
 </form>
 
